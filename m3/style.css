@@ -1,0 +1,38 @@
+.c0 {
+    color: #fff;
+    background-color: #b4d2f7;
+}
+
+
+.c1 {
+    color: #fff;
+    background-color: #003476;
+}
+
+.c2 {
+    color: #fff;
+    background-color: #0062d2;
+}
+
+.c3 {
+    color: #fff;
+    background-color: #b4d2f7;
+}
+
+.c4 {
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    padding: 20px 50;
+    padding-right: 30px;
+    padding-left: 30px;;
+    color: black;
+    text-align: center;
+}
+
+a:hover {
+    background: white;
+}
