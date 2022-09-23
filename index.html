@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modelación</title>
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/style.css">
+    <title>Smoking Monkeys</title>
+    <link rel="stylesheet" href="src/assets/styles/style.css">
+
 </head>
 <body>
-    <p>Hola mundo</p>
-    <script src="src/"></script>
+    <header>
+        <img class="logo" src="src/assets/images/logo.png" alt="logo">
+        <nav>
+            <ul class="nav_links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta"><button>Cerrar Sesion</button></a>
+    </header>
+
+    <h1>Log in</h1>
+
+    <section class="flex-container" id="cuerpo">
+        <div class="foto">
+            <img class="foto_fondo" src="src/assets/images/foto.jpg" alt="foto">
+        </div>
+        <div class="card">
+            <a href="src/views/Admin/interfaz_admin.html" class="cta"><button id="btn_1">Admin</button></a>
+        </div>
+        <div class="card">
+            <a href="src/views/Users/interfaz_usuario.html" class="cta"><button id="btn_1">User</button></a>
+        </div>
+        <div class="card">
+            <a href="src/views/Guest/interfaz_guest.html" class="cta"><button id="btn_1">Guest</button></a>
+        </div>
+    </section>
 </body>
 </html>
