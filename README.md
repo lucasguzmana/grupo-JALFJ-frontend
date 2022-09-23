@@ -23,7 +23,7 @@ CSSs:
 - style.css
 
 JSs:
-- archivo.js
+- cambio_de_color.js
 
 De todos los HTMLs, al unico que no se puede acceder navegando es a "nuevo_usuario.html", dado que aun no está implementado el log in, pero será para crear un nuevo usuario.
 
