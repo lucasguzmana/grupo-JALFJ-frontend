@@ -8,7 +8,8 @@ h1,h2 {
 
 p {
     font-family: 'Roboto Mono', monospace;
-    font-weight: bold; 
+    font-weight: bold;
+    text-align: justify; 
 }
 
 li, a, button {
@@ -115,8 +116,8 @@ body {
 }
 
 .card {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 240px;
     margin: 10px;
     background-color: #fff;
     border-radius: 5px;
@@ -136,3 +137,13 @@ body {
    text-align: center;
    /*text-align: justify;*/
 }
+
+.perfil{
+    width: 180px;
+    height: 240px;
+}
+
+.nombre{
+    text-align: justify;
+}
+
