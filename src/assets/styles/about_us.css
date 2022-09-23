@@ -131,6 +131,7 @@ body {
 .tarjeta {
     display: flex;
     flex-direction: row;
+
 }
 
 #presentacion_grupo {
@@ -145,5 +146,15 @@ body {
 
 .nombre{
     text-align: justify;
+}
+
+#cuerpo_about_us {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 400px;
+    width: 96%;
 }
 
