@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Smoking Monkeys</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="src/assets/styles/style.css">
-
 </head>
 <body>
     <header>
@@ -12,12 +12,20 @@
         <nav>
             <ul class="nav_links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="src/views/about.html">About</a></li>
+                <li><a href="src/views/about_us.html">About Us</a></li>
+                <li>
+                    <a href="#">Contact</a>
+                    <ul class="dropdown">
+                        <li><a href="#">José Antonio Vial: +569 93452908</a></li>
+                        <li><a href="#">Lucas Guzmán A: +569 84583920</a></li>
+                        <li><a href="#">Felipe Karachon: +569 98647324</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <a href="#" class="cta"><button>Cerrar Sesion</button></a>
+        <a href="#" class="dark_mode"><button class="dark_mode_btn" onclick="cambiar_fondo()">DM</button></a>
     </header>
 
     <h1>Log in</h1>
@@ -36,5 +44,7 @@
             <a href="src/views/Guest/interfaz_guest.html" class="cta"><button id="btn_1">Guest</button></a>
         </div>
     </section>
+
+    <script src="src/assets/js/cambio_de_color.js"></script>
 </body>
 </html>

@@ -12,20 +12,60 @@
         <img class="logo" src="../../assets/images/logo.png" alt="logo">
         <nav>
             <ul class="nav_links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../about_us.html">About Us</a></li>
+                <li>
+                    <a href="#">Contact</a>
+                    <ul class="dropdown">
+                        <li><a href="#">José Antonio Vial: +569 93452908</a></li>
+                        <li><a href="#">Lucas Guzmán A: +569 84583920</a></li>
+                        <li><a href="#">Felipe Karachon: +569 98647324</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <a href="#" class="cta"><button>Cerrar Sesion</button></a>
+        <a href="#" class="dark_mode"><button class="dark_mode_btn" onclick="cambiar_fondo()">DM</button></a>
     </header>
 
-    <h1>Interfaz Usuario</h1>
+    <h1 id="admin_p">Interfaz Usuario:</h1>
 
-    <div class="interfaz_volver">
-        <a href="../../../index.html"><button id="volver">Volver</button></a>
-    </div>
+    <section class="flex-container" id="cuerpo_1">
+        <div class="card_2">
+            <h2>Bienvenido Usuario:</h2>
+            <p id="admin_p">Con nuestra aplicación podrás hacer simulaciones dinámicas
+                para la cadena de producción de tu empresa de tabaquera la cual te permitirá obtener predicciones
+                basadas en modelos estadísticos para facilitar la toma de decisiones.
+            </p>
+            <p id="admin_p">Como usuario podrás ver estadísticas de producción, y crear tus propios
+                modelos de simulación, éxito en tu trabajo.
+            </p>
+        </div>
+        <div class="card_3">
+            <label for="standard-select" style="font-weight: bold;">Elige un modelo:</label>
+           <div class="select">
+                <select id="standard-select">
+                    <option value="0">Modelo 1</option>
+                    <option value="1">Modelo 2</option>
+                    <option value="2">Modelo 3</option>
+                    <option value="3">Modelo 4</option>
+                    <option value="3">Modelo 5</option>
+                </select>
+            </div>
+            <a href="../modelos.html" class="cta"><button id="btn_1">Ver mas</button></a>
+        </div>
+    </section>
+
+    <hr></hr>
+
+    <section class="flex-container" id="cuerpo_2">
+        <a href="../nuevo_modelo.html" class="cta"><button id="btn_2">Crear Modelos</button></a>
+        <img src="../../assets/images/admin.jpg" id="img_admin">
+    </section>
+
+    <footer class="interfaz_volver"><a href="../../../index.html"><button id="volver">Volver</button></a></footer>
     
+    <script src="../../assets/js/cambio_de_color.js"></script>
 </body>
 </html>

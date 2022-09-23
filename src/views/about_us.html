@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="../assets/styles/about_us.css">
+    <title>Smoking Monkeys</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="../assets/images/logo.png" alt="logo">
+        <nav>
+            <ul class="nav_links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">About Us</a></li>
+                <li>
+                    <a href="#">Contact</a>
+                    <ul class="dropdown">
+                        <li><a href="#">José Antonio Vial: +569 93452908</a></li>
+                        <li><a href="#">Lucas Guzmán A: +569 84583920</a></li>
+                        <li><a href="#">Felipe Karachon: +569 98647324</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a href="#" class="cta"><button>Cerrar Sesion</button></a>
+        <a href="#" class="dark_mode"><button class="dark_mode_btn" onclick="cambiar_fondo()">DM</button></a>
+    </header>
+
+    <h1>Nosotros</h1>
+    <p id="presentacion_grupo">Somos JALFJ, un equipo de 3 desarrolladores de la Universidad Catolica con un objetivo común, desarrollar la mejor página del curso</p>
+
+    <section class="flex-container" id="cuerpo_about_us">
+        <div class="tarjeta">
+            <div class="card">
+                <img class="perfil" src="../assets/images/Felipe.jpg" alt="foto Felipe">
+            </div>
+            <div class="presentacion">
+                <h2 class="nombre">Felipe Karachon</h2>
+                <p>Major</p>
+                <p>Minor</p>
+                <p>Generación 2019</p>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <div class="card">
+                <img class="perfil" src="../assets/images/Lucas.jpg" alt="foto Lucas">
+            </div>
+            <div class="presentacion">
+                <h2 class="nombre">Lucas Guzmán</h2>
+                <p>Ingeniero de Software</p>
+                <p>Minor Industrial</p>
+                <p>Generación 2020</p>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <div class="card">
+                <img class="perfil" src="../assets/images/Jose Antonio.jpg" alt="foto Jose Antonio">
+            </div>
+            <div class="presentacion">
+                <h2 class="nombre">José Antonio Vial</h2>
+                <p>Ingeniero en Computación</p>
+                <p>Minor Industrial</p>
+                <p>Generación 2019</p>
+            </div>
+        </div>
+
+        
+    </section>
+    <div class="interfaz_volver">
+        <a href="../../index.html"><button id="volver">Volver</button></a>
+    </div>
+
+    <script src="../assets/js/cambio_de_color.js"></script>
+</body>
+</html>
