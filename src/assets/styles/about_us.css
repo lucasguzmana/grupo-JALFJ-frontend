@@ -131,7 +131,6 @@ body {
 .tarjeta {
     display: flex;
     flex-direction: row;
-
 }
 
 #presentacion_grupo {
