@@ -57,7 +57,9 @@ const VerModelo = props => {
       <br/>
       <br/>
       <h1>Modelo {currentModelo.nombre}</h1>
-      <section className="flex-container" id="cuerpo_3">
+      <br/>
+      <br/>
+      <section className="flex-container" id="cuerpo_4">
         {currentModelo ? (
           <>
               <table className="table">
@@ -65,11 +67,6 @@ const VerModelo = props => {
                   <th>Nombre</th>
                   <th>Param_1</th>
                   <th>Param_2</th>
-                  {/* <th>Param_3</th>
-                  <th>Param_4</th>
-                  <th>Param_5</th>
-                  <th>Param_6</th>
-                  <th>Param_7</th> */}
                 </tr>
                 <tr>
                   <td>{currentModelo.nombre}</td>

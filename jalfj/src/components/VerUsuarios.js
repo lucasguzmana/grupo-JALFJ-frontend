@@ -36,7 +36,7 @@ function VerUsuarios () {
                         <th>Eliminar</th>
                     </tr>
                     {usuarios.map((usuario) => (
-                        <ShowUser user={usuario}/>
+                        <ShowUser user={usuario} user_id={usuario.id}/>
                     ))}
                 </table>
                 <BotonVolver link={"/admin"}/>

@@ -10,6 +10,7 @@ import VerUsuarios from './components/VerUsuarios';
 import VerModelo from './components/VerModelo';
 import CrearModelo from './components/CrearModelo';
 import Login from './components/Login';
+import Registrarse from './components/Registrarse';
 
 function Routing(){
     return (
@@ -19,13 +20,14 @@ function Routing(){
                 <Route path={"/about_us"} element={<AboutUs/>}/>
                 <Route path={"/about"} element={<About/>}/>
                 <Route path={"/admin"} element={<Admin/>}/>
-                <Route path={"/user"} element={<User/>}/>
+                <Route path={"/user/:id"} element={<User/>}/>
                 <Route path={"/guest"} element={<Guest/>}/>
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
                 <Route path={"/ver_modelo/:user"} element={<VerModelo/>}/>
                 <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
                 <Route path={"/login"} element={<Login/>}/>
-                </Routes>
+                <Route path={"/registrarse"} element={<Registrarse/>}/>
+            </Routes>
         </BrowserRouter>
     )
 }

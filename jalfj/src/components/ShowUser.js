@@ -1,5 +1,9 @@
 import BotonEliminar from "./BotonEliminar";
 
+function DeleteUser (id) {
+  console.log("DeleteUser: " + id);
+}
+
 function ShowUser(props) {
   return (
     <tr>
@@ -8,7 +12,7 @@ function ShowUser(props) {
         <td>{props.user.password}</td>
         <td>{props.user.email}</td>
         <td>{props.user.telefono}</td>
-        <td><BotonEliminar id={"btn_eliminar"}/></td>
+        <td><BotonEliminar id={"btn_eliminar"} onClick={DeleteUser(props.user_id)}/></td>
     </tr>
   );
 }

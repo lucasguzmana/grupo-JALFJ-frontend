@@ -1,3 +1,4 @@
+import BotonVolver from "./BotonVolver";
 import Navbar from "./Navbar";
 
 function AboutUs () {
@@ -42,9 +43,7 @@ function AboutUs () {
                     </div>
                 </div>           
             </section>
-            <div class="interfaz_volver">
-                <a href="/"><button id="volver">Volver</button></a>
-            </div>
+            <BotonVolver link={"/"}/>
         </>
     );
 }
