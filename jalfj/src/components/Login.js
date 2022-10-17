@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 
 function Login(props) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ function Login(props) {
   const handleLogin = () => {
     setError(null);
     setLoading(true);
-    axios.post('http://localhost:4000/users/signin', { username: username.value, password: password.value }).then(response => {
+    axios.post('http://localhost:8080/users/signin', { username: username.value, password: password.value }).then(response => {
     setLoading(false);
     props.history.push('/user');
     }).catch(error => {
@@ -21,19 +22,22 @@ function Login(props) {
   }
 
   return (
-    <div>
-      Login<br /><br />
-      <div>
-        Username<br />
-        <input type="text" {...username} autoComplete="new-password" />
-      </div>
-      <div style={{ marginTop: 10 }}>
-        Password<br />
-        <input type="password" {...password} autoComplete="new-password" />
-      </div>
-      {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-      <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
-    </div>
+    <>
+      <Navbar/>
+      <section className="flex-container" id="cuerpo_3">
+        Login<br /><br />
+        <div>
+          Username<br />
+          <input type="text" {...username} autoComplete="new-password" />
+        </div>
+        <div style={{ marginTop: 10 }}>
+          Password<br />
+          <input type="password" {...password} autoComplete="new-password" />
+        </div>
+        {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
+        <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
+      </section>
+    </>
   );
 }
 

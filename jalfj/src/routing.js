@@ -9,10 +9,7 @@ import Guest from './components/Guest';
 import VerUsuarios from './components/VerUsuarios';
 import VerModelo from './components/VerModelo';
 import CrearModelo from './components/CrearModelo';
-<<<<<<< HEAD
-=======
 import Login from './components/Login';
->>>>>>> ef4df5256b6604e21f8b9deac40dab4bedfcf794
 
 function Routing(){
     return (
@@ -27,12 +24,8 @@ function Routing(){
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
                 <Route path={"/ver_modelo/:user"} element={<VerModelo/>}/>
                 <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
-<<<<<<< HEAD
-            </Routes>
-=======
                 <Route path={"/login"} element={<Login/>}/>
                 </Routes>
->>>>>>> ef4df5256b6604e21f8b9deac40dab4bedfcf794
         </BrowserRouter>
     )
 }
