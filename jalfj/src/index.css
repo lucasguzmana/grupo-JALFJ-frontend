@@ -176,7 +176,7 @@ h2 {
 .botonVolver {
   bottom: 0;
   padding: 10px 10px;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   margin: 20px 46.7%;
@@ -198,7 +198,7 @@ h2 {
   font-family: 'Roboto Mono', monospace;
 }
 
-/* .card {
+.card {
   width: 250px;
   height: 200px;
   background-color: #fff;
@@ -207,7 +207,7 @@ h2 {
   text-align: center;
   line-height: 200px;
   font-family: 'Roboto Mono', monospace;
-} */
+}
 
 label {
   font-family: 'Roboto Mono', monospace;
@@ -416,4 +416,45 @@ li, a, button {
   height: 80px;
   width: 300px;
   font-size: 24px;
+}
+
+#cuerpo_3 {
+  flex-direction: row;
+  justify-content: space-around;
+  height: 250px;
+  width: 80%;
+  margin: 0 10%;
+}
+
+#table_usuarios {
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 5%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 900px;
+  margin-left: 200px;
+  border: 2px solid black;
+}
+
+tr {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  margin: 5px 0;
+}
+
+td {
+  padding: 5px;
+}
+
+th {
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 5px;
 }

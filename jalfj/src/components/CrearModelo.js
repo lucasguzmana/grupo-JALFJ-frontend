@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
-import BotonVoler from "./BotonVolver";
-import { useParams } from "react-router-dom";
+// import Navbar from "./Navbar";
+// import BotonVoler from "./BotonVolver";
+// import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import ModeloDataService from "../services/ModeloService";
 

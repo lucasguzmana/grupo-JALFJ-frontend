@@ -1,11 +1,16 @@
-import BotonVolver from "./BotonVolver";
+// import BotonVolver from "./BotonVolver";
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ModeloDataService from "../services/ModeloService";
+import Navbar from "./Navbar";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import BotonVolver from "./BotonVolver";
 
 const VerModelo = props => {
   const { id }= useParams();
-  let navigate = useNavigate();
+  const user = useParams().user;
+  console.log(user);
+  // let navigate = useNavigate();
 
   const initialModeloState = {
     id: null,
@@ -16,7 +21,7 @@ const VerModelo = props => {
   };
 
   const [currentModelo, setCurrentModelo] = useState(initialModeloState);
-  const [message, setMessage] = useState("");
+  const [message] = useState("");
 
   const getModelo = id => {
     ModeloDataService.get(id)
@@ -35,52 +40,54 @@ const VerModelo = props => {
   }, [id]);
 
 
-const deleteModelo = () => {
-  ModeloDataService.remove(currentModelo.id)
-      .then(response => {
-        console.log(response.data);
-        navigate("/modelos");
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
+// const deleteModelo = () => {
+//   ModeloDataService.remove(currentModelo.id)
+//       .then(response => {
+//         console.log(response.data);
+//         navigate("/modelos");
+//       })
+//       .catch(e => {
+//         console.log(e);
+//       });
+//   };
 
   return (
-    <div>
-      {currentModelo ? (
-        <div>
-          <h4>Modelo</h4>
-
-            <div>
-              <label htmlFor="nombre">Nombre: </label>
-              <p> {currentModelo.nombre} </p>
+    <>
+      <Navbar/>
+      <br/>
+      <br/>
+      <h1>Modelo {currentModelo.nombre}</h1>
+      <section className="flex-container" id="cuerpo_3">
+        {currentModelo ? (
+          <>
+              <table className="table">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Param_1</th>
+                  <th>Param_2</th>
+                  {/* <th>Param_3</th>
+                  <th>Param_4</th>
+                  <th>Param_5</th>
+                  <th>Param_6</th>
+                  <th>Param_7</th> */}
+                </tr>
+                <tr>
+                  <td>{currentModelo.nombre}</td>
+                  <td>{currentModelo.param_1}</td>
+                  <td>{currentModelo.param_2}</td>
+                </tr>
+              </table>
+            <p>{message}</p>
+          </>
+        ) : (
+          <div>
+            <br />
+            <p>Please click on a Modelo...</p>
           </div>
-
-            <div>
-              <label htmlFor="param_1">Parameter 1: </label>
-              <p> {currentModelo.param_1} </p>
-            </div>
-
-
-            <div>
-              <label htmlFor="param_2">Parameter 2: </label>
-              <p> {currentModelo.param_2} </p>
-            </div>
-
-          <button className="badge badge-danger mr-2" onClick={deleteModelo}>
-            Delete
-          </button>
-
-          <p>{message}</p>
-        </div>
-      ) : (
-        <div>
-          <br />
-          <p>Please click on a Modelo...</p>
-        </div>
-      )}
-    </div>
+        )}
+      </section>
+      <BotonVolver link={`/${user}` }/>
+    </>
   );
 };
 
