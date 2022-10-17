@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 // import Navbar from "./Navbar";
 // import BotonVoler from "./BotonVolver";
 // import { useParams } from "react-router-dom";
+=======
+import Navbar from "./Navbar";
+import BotonVoler from "./BotonVolver";
+import { useParams } from "react-router-dom";
+>>>>>>> ef4df5256b6604e21f8b9deac40dab4bedfcf794
 import React, { useState } from "react";
 import ModeloDataService from "../services/ModeloService";
 

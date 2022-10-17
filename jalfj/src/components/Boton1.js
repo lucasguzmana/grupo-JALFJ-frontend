@@ -10,4 +10,8 @@ function Boton1(props) {
     );
 }
 
+<<<<<<< HEAD
 export default Boton1;
+=======
+export default Boton1;
+>>>>>>> ef4df5256b6604e21f8b9deac40dab4bedfcf794
