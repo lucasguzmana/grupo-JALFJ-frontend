@@ -372,6 +372,16 @@ p {
   text-align: justify; 
 }
 
+#btn_eliminar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#btn_eliminar:hover {
+  background-color: #881521;
+  color: #fff;
+}
+
 #presentacion_grupo {
   text-align: center;
 }
@@ -432,14 +442,12 @@ li, a, button {
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   text-align: center;
-  margin: 30px 5%;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 900px;
-  margin-left: 200px;
   border: 2px solid black;
 }
 

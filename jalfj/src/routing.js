@@ -9,6 +9,7 @@ import Guest from './components/Guest';
 import VerUsuarios from './components/VerUsuarios';
 import VerModelo from './components/VerModelo';
 import CrearModelo from './components/CrearModelo';
+import Login from './components/Login';
 
 function Routing(){
     return (
@@ -23,7 +24,8 @@ function Routing(){
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
                 <Route path={"/ver_modelo/:user"} element={<VerModelo/>}/>
                 <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
-            </Routes>
+                <Route path={"/login"} element={<Login/>}/>
+                </Routes>
         </BrowserRouter>
     )
 }
