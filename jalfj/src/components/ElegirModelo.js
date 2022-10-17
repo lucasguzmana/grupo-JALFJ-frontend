@@ -7,11 +7,11 @@ function ElegirModelo(props) {
     const [modelos, setModelos] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const result = await axios.get(`${SERVER_URL}/modelos`);
+            const result = await axios.get(`${SERVER_URL}/modelos/${props.user}/${props.id}`);
             setModelos(result.data);
         }
         fetchData();
-    }, []);
+    }, [props.user, props.id]);
 
     return (
         <div className="card_3">
@@ -23,7 +23,7 @@ function ElegirModelo(props) {
                     ))}
                 </select>
             </div>
-            <a href={`/ver_modelo/${props.user}`} class="cta"><button id="btn_1">Ver mas</button></a>
+            <a href={`/ver_modelo/${props.user}/${props.id}`} class="cta"><button id="btn_1">Ver mas</button></a>
         </div>
     );
 }

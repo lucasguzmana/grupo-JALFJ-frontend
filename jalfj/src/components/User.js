@@ -14,7 +14,7 @@ function User () {
                 p1={"Con nuestra aplicación podrás hacer simulaciones dinámicas para la cadena de producción de tu empresa de tabaquera la cual te permitirá obtener predicciones basadas en modelos estadísticos para facilitar la toma de decisiones."}
                 p2={"Como usuario podrás ver estadísticas de producción, y crear tus propios modelos de simulación, éxito en tu trabajo."}
             />
-            <ElegirModelo user={"user"}/>
+            <ElegirModelo user={"user"} id={1}/>
         </section>
 
         <hr></hr>

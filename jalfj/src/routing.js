@@ -23,7 +23,7 @@ function Routing(){
                 <Route path={"/user/:id"} element={<User/>}/>
                 <Route path={"/guest"} element={<Guest/>}/>
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
-                <Route path={"/ver_modelo/:user"} element={<VerModelo/>}/>
+                <Route path={"/ver_modelo/:user/:id"} element={<VerModelo/>}/>
                 <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
                 <Route path={"/login"} element={<Login/>}/>
                 <Route path={"/registrarse"} element={<Registrarse/>}/>

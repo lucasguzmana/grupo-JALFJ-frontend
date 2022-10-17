@@ -1,67 +1,21 @@
-// import BotonVolver from "./BotonVolver";
-import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import ModeloDataService from "../services/ModeloService";
-import Navbar from "./Navbar";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router";
 import BotonVolver from "./BotonVolver";
+import Navbar from "./Navbar";
 
-const VerModelo = props => {
-  const { id }= useParams();
+function VerModelo () {
   const user = useParams().user;
+  const id = useParams().id;
   console.log(user);
-  // let navigate = useNavigate();
-
-  const initialModeloState = {
-    id: null,
-    nombre: "Modelo N",
-    param_1: 0,
-    param_2: 0,
-    published: false
-  };
-
-  const [currentModelo, setCurrentModelo] = useState(initialModeloState);
-  const [message] = useState("");
-
-  const getModelo = id => {
-    ModeloDataService.get(id)
-      .then(response => {
-        setCurrentModelo(response.data);
-        console.log(response.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
-  useEffect(() => {
-    if (id)
-      getModelo(id);
-  }, [id]);
-
-
-// const deleteModelo = () => {
-//   ModeloDataService.remove(currentModelo.id)
-//       .then(response => {
-//         console.log(response.data);
-//         navigate("/modelos");
-//       })
-//       .catch(e => {
-//         console.log(e);
-//       });
-//   };
-
+  console.log(id);
   return (
     <>
       <Navbar/>
       <br/>
       <br/>
-      <h1>Modelo {currentModelo.nombre}</h1>
+      <h1>Modelo 1</h1>
       <br/>
       <br/>
       <section className="flex-container" id="cuerpo_4">
-        {currentModelo ? (
-          <>
               <table className="table">
                 <tr>
                   <th>Nombre</th>
@@ -69,21 +23,13 @@ const VerModelo = props => {
                   <th>Param_2</th>
                 </tr>
                 <tr>
-                  <td>{currentModelo.nombre}</td>
-                  <td>{currentModelo.param_1}</td>
-                  <td>{currentModelo.param_2}</td>
+                  <td>Modelo 1</td>
+                  <td>10</td>
+                  <td>20</td>
                 </tr>
               </table>
-            <p>{message}</p>
-          </>
-        ) : (
-          <div>
-            <br />
-            <p>Please click on a Modelo...</p>
-          </div>
-        )}
       </section>
-      <BotonVolver link={`/${user}` }/>
+      <BotonVolver link={`/${user}/${id}` }/>
     </>
   );
 };
