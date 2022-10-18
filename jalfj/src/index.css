@@ -500,14 +500,6 @@ li, a, button {
   margin: 0 10%;
 }
 
-#table_usuarios {
-  border-collapse: collapse;
-  border: 1px solid #fff;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-  text-align: center;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;

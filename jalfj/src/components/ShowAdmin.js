@@ -1,6 +1,4 @@
-import BotonEliminar from "./BotonEliminar";
-
-function ShowUser(props) {
+function ShowAdmin(props) {
   return (
     <tr>
         <td>{props.user.id}</td>
@@ -8,9 +6,9 @@ function ShowUser(props) {
         <td>{props.user.password}</td>
         <td>{props.user.email}</td>
         <td>{props.user.telefono}</td>
-        <td><BotonEliminar id={"btn_eliminar"} alApretar={props.funcion} title={"X"} user_id={props.user.id}/></td>
+        <td></td>
     </tr>
   );
 }
 
-export default ShowUser;
+export default ShowAdmin;

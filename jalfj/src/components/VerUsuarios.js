@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import ShowUser from './ShowUser';
+import ShowAdmin from './ShowAdmin';
 
 export const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -16,6 +17,13 @@ function VerUsuarios () {
         }
         fetchData();
     }, []);
+
+    const eliminarUsuario = async (id) => {
+        await axios.post(`${SERVER_URL}/usuarios/delete_models_and_results/${id}`);
+        await axios.post(`${SERVER_URL}/usuarios/delete/${id}`);
+        const result = await axios.get(`${SERVER_URL}/usuarios`);
+        setUsuarios(result.data);
+    }
 
     return (
         <>
@@ -36,7 +44,7 @@ function VerUsuarios () {
                         <th>Eliminar</th>
                     </tr>
                     {usuarios.map((usuario) => (
-                        <ShowUser user={usuario} user_id={usuario.id}/>
+                        usuario.nombre !== "admin" ? <ShowUser user={usuario} funcion={eliminarUsuario}/> : <ShowAdmin user={usuario}/>
                     ))}
                 </table>
                 <BotonVolver link={"/admin"}/>
