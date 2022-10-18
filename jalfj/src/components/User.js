@@ -3,8 +3,11 @@ import ElegirModelo from "./ElegirModelo";
 import Navbar from "./Navbar";
 import Parrafo from "./Parrafo";
 import Boton1 from "./Boton1";
+import { useParams } from "react-router-dom";
 
 function User () {
+  const params = useParams();
+  const id = params.id;
   return (
     <>
         <Navbar/>
@@ -20,7 +23,7 @@ function User () {
         <hr></hr>
 
         <section class="flex-container" id="cuerpo_2">
-            <Boton1 link={"/crear_modelo/user"} title={"Crear Modelos"} id={"btn_2"}/>
+            <Boton1 link={"/crear_modelo/" + id} title={"Crear Modelos"} id={"btn_2"}/>
             <img src={"../images/admin.jpg"} id={"img_admin"} alt={"admin"}/>
         </section>
 

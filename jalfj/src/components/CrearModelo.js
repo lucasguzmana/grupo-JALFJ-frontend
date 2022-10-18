@@ -1,11 +1,11 @@
 import axios from 'axios';
+import BotonVolver from './BotonVolver';
 
 export const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function CrearModelo(props) {
-    const user = props.user;
-    let user_id = 0;
-    { user === "admin" ? user_id = 0 : user_id = 1 }
+    const user_id = props.id;
+
     const NuevoModelo = async () => {
         const nombre = document.getElementById("nombre").value;
         const parametro1 = document.getElementById("param_1").value;
@@ -39,22 +39,25 @@ function CrearModelo(props) {
     };
 
     return (
-        <div id='CrearModelo'>
-            <label for="standard-select">Crea un modelo:</label>
-            <label>Nombre:</label>
-            <input type="text" id="nombre" name="nombre" />
-            <label>Parametro 1:</label>
-            <input type="number" id="param_1" name="param_1" />
-            <label>Parametro 2:</label>
-            <input type="number" id="param_2" name="param_2" />
-            <label>Parametro 3:</label>
-            <input type="number" id="param_3" name="param_3" />
-            <label>Parametro 4:</label>
-            <input type="number" id="param_4" name="param_4" />
-            <label>Parametro 5:</label>
-            <input type="number" id="param_5" name="param_5" />
-            <button onClick={NuevoModelo}>Crear</button>
-        </div>
+        <>
+            <h1>Crear Modelo</h1>
+            <div id='CrearModelo'>
+                <label>Nombre:</label>
+                <input type="text" id="nombre" name="nombre" />
+                <label>Parametro 1:</label>
+                <input type="number" id="param_1" name="param_1" />
+                <label>Parametro 2:</label>
+                <input type="number" id="param_2" name="param_2" />
+                <label>Parametro 3:</label>
+                <input type="number" id="param_3" name="param_3" />
+                <label>Parametro 4:</label>
+                <input type="number" id="param_4" name="param_4" />
+                <label>Parametro 5:</label>
+                <input type="number" id="param_5" name="param_5" />
+                <button onClick={NuevoModelo}>Crear</button>
+            </div>
+            {user_id === "0" ? <BotonVolver link={"/admin"}/> : <BotonVolver link={"/user/" + user_id}/>}
+        </>
     );
 }
 

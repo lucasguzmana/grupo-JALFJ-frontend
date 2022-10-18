@@ -4,12 +4,11 @@ import { useParams } from "react-router-dom";
 
 function NuevoModelo() {
     const params = useParams();
-    const user = params.user;
-    console.log(user);
+    const id = params.id;
     return (
         <>
             <Navbar />
-            <CrearModelo user={user} />
+            <CrearModelo id={id} />
         </>
     );
 }
