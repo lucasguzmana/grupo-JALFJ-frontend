@@ -3,7 +3,7 @@ function BotonEliminar (props) {
     <div>
         <a href={props.link}>
             <button id={props.id} onClick={props.onClick}>
-            X                
+            {props.title}               
             </button>
         </a>
     </div>

@@ -12,7 +12,7 @@ function ShowUser(props) {
         <td>{props.user.password}</td>
         <td>{props.user.email}</td>
         <td>{props.user.telefono}</td>
-        <td><BotonEliminar id={"btn_eliminar"} onClick={DeleteUser(props.user_id)}/></td>
+        <td><BotonEliminar id={"btn_eliminar"} onClick={DeleteUser(props.user_id)} title={"X"}/></td>
     </tr>
   );
 }
