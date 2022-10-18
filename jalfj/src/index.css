@@ -530,3 +530,19 @@ th {
   font-weight: bold;
   padding: 5px;
 }
+
+#CrearModelo {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Mono', monospace;
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+

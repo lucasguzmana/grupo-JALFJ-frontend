@@ -8,7 +8,7 @@ import User from './components/User';
 import Guest from './components/Guest';
 import VerUsuarios from './components/VerUsuarios';
 import VerModelo from './components/VerModelo';
-import CrearModelo from './components/CrearModelo';
+import NuevoModelo from './components/NuevoModelo';
 import Login from './components/Login';
 import Registrarse from './components/Registrarse';
 
@@ -24,7 +24,7 @@ function Routing(){
                 <Route path={"/guest"} element={<Guest/>}/>
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
                 <Route path={"/ver_modelo/:user/:id"} element={<VerModelo/>}/>
-                <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
+                <Route path={"/crear_modelo/:user"} element={<NuevoModelo/>}/>
                 <Route path={"/login"} element={<Login/>}/>
                 <Route path={"/registrarse"} element={<Registrarse/>}/>
             </Routes>
