@@ -11,3 +11,10 @@ Cuando uno ingresa como usuario lo rediccionara a una interfaz de inicio de sesi
 
 Cuando uno ingresa como invitado entra directo a la interfaz de invitado, donde podrá ver los modelos creados por los usuarios y sus resultados, pero no podrá eliminarlos.
 
+Como correr la app:
+
+- Echar a andar el servidor (instrucciones en el README del repositorio del backend)
+- Clonar el repositorio
+- Instalar las dependencias con npm install
+- Correr el servidor con npm start
+- Abrir el navegador en localhost:3000
