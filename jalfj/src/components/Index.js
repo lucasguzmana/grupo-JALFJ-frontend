@@ -8,7 +8,7 @@ function Index() {
             <Navbar/>
             <section class="flex-container" id="cuerpo">
                 <Tarjeta boton={<Boton1 title={"Admin"} id={"btn_1"} link={"Admin"}/>}/>
-                <Tarjeta boton={<Boton1 title={"User"} id={"btn_1"} link={"User"}/>}/>
+                <Tarjeta boton={<Boton1 title={"User"} id={"btn_1"} link={"login"}/>}/>
                 <Tarjeta boton={<Boton1 title={"Guest"} id={"btn_1"} link={"Guest"}/>}/>
             </section>
         </>

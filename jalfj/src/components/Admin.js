@@ -22,7 +22,7 @@ function Admin() {
         <hr></hr>
 
         <section class="flex-container" id="cuerpo_2">
-            <Boton1 link={"/crear_modelo/admin"} title={"Crear Modelos"} id={"btn_2"}/>
+            <Boton1 link={"/crear_modelo/0"} title={"Crear Modelos"} id={"btn_2"}/>
             <img src={"../images/admin.jpg"} id={"img_admin"} alt={"admin"}/>
         </section>
 

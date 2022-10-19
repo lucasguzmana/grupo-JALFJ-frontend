@@ -8,7 +8,10 @@ import User from './components/User';
 import Guest from './components/Guest';
 import VerUsuarios from './components/VerUsuarios';
 import VerModelo from './components/VerModelo';
-import CrearModelo from './components/CrearModelo';
+import NuevoModelo from './components/NuevoModelo';
+import Login from './components/Login';
+import Registrarse from './components/Registrarse';
+import ResultadosModelo from './components/ResultadosModelo';
 
 function Routing(){
     return (
@@ -18,11 +21,14 @@ function Routing(){
                 <Route path={"/about_us"} element={<AboutUs/>}/>
                 <Route path={"/about"} element={<About/>}/>
                 <Route path={"/admin"} element={<Admin/>}/>
-                <Route path={"/user"} element={<User/>}/>
+                <Route path={"/user/:id"} element={<User/>}/>
                 <Route path={"/guest"} element={<Guest/>}/>
                 <Route path={"/ver_usuarios"} element={<VerUsuarios/>}/>
-                <Route path={"/ver_modelo/:user"} element={<VerModelo/>}/>
-                <Route path={"/crear_modelo/:user"} element={<CrearModelo/>}/>
+                <Route path={"/ver_modelo/:user/:id/:modelo_id"} element={<VerModelo/>}/>
+                <Route path={"/crear_modelo/:id"} element={<NuevoModelo/>}/>
+                <Route path={"/login"} element={<Login/>}/>
+                <Route path={"/registrarse"} element={<Registrarse/>}/>
+                <Route path={"/resultados_modelo/:user/:id/:modelo_id"} element={<ResultadosModelo/>}/>
             </Routes>
         </BrowserRouter>
     )

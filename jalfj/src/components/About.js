@@ -1,3 +1,4 @@
+import BotonVolver from "./BotonVolver";
 import Navbar from "./Navbar";
 
 function About () {
@@ -10,9 +11,7 @@ function About () {
             <p class="acerca_de">La version actual es v 1.0</p>
             <hr></hr>
             <img  id={"about_img"} src={"../images/about.jpg"} alt={"img_about"}/>
-            <div class="interfaz_volver">
-                <a href="/"><button id="volver">Volver</button></a>
-            </div>
+            <BotonVolver link={"/"}/>
         </>
     );
 }
