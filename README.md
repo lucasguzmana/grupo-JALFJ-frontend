@@ -1,32 +1,13 @@
 # grupo-JALFJ-frontend
 
-Cambios respecto a la E0:
-- Landing Page: lo renovamos casi al completo, pareció mas logico dividir en distintas paginas las secciones de "about", "about us" y "log in", quedando esta ultima seccion como la landing page y las demás como elementos a los que se puede acceder con la navegation bar.
+Reglas de negocio de Somking Monkeys:
 
-Los archivos estan ordenados por carpetas con nombres descriptivos, siendo los siguentes:
 
-HTMLs:
-- index.html
-- interfaz_admin.html
-- interfaz_guest.html
-- interfaz_usuario.html
-- about_us.html
-- about.html
-- modelos.html
-- nuevo_modelo.html
-- nuevo_usuario.html
-- usuarios.html
+Cuando uno ingresa a la App se le presentan 3 opciones de ingreso, una como administrador, otra como usuario y otra como invitado. Además, durante toda la navegación habrá un NavBar que permitirá navegar entre las distintas secciones de la App. En ella se pueden ver 4 opciones: Home, About, About Us y Contact. La primera opción lo llevara al landing page, la segunda a una sección donde se habla de la App, la tercera a una sección donde se habla de los desarrolladores y la última a una sección donde se puede contactar con los desarrolladores. Adicionalmente, en el NavBar tambien hay 2 botones, uno de cerrar sesión y otro de darkmode, sin embargo para esta entrega solo llevarán al landing page. Por ultimo, en toda pagina habrá un boton para volver atras.
 
-CSSs:
-- about_us.css
-- about.css
-- style.css
+Cuando uno ingresa como administrador entra directo a la interfaz de administrador, donde se puede elegir entre todos los modelos y verlo en detalle, donde se pueden ver los parametros, los resultados o eliminarlo mediante los botones que hay en las siguentes secciones. Además, se puede acceder a una lista de los usuarios registrados, donde se puede ver su nombre, password, email y telefono. En ella se pueden eliminar los usuarios mediante un boton (con excepcion del administrador).Por ultimo se puede crear un modelo, llenando los campos que se piden al clickear crear modelo.
 
-JSs:
-- cambio_de_color.js
+Cuando uno ingresa como usuario lo rediccionara a una interfaz de inicio de sesión/registro, sin embargo esta es solo visual y no está implementada, por lo que existe un boton llamado "interfaz user" que lo llevara directo a la interfaz de usuario. En ella se pueden ver los modelos creados por el usuario que ingreso (como aún no esta implementado el log in por defecto se ingresa como el usuario de id = 1, pero uno puede cambiar esto desde la URL del navegador si es que ha añadido nuevos usuarios manuelmente a la base de datos). Al abrir la lista de modelos uno puede ver el detalle, los resultados o eliminarlos si desea. Por otra parte, se puede crear un modelo, llenando los campos que se piden al clickear crear modelo.
 
-De todos los HTMLs, al unico que no se puede acceder navegando es a "nuevo_usuario.html", dado que aun no está implementado el log in, pero será para crear un nuevo usuario.
+Cuando uno ingresa como invitado entra directo a la interfaz de invitado, donde podrá ver los modelos creados por los usuarios y sus resultados, pero no podrá eliminarlos.
 
-Las paginas para ver un modelo, crear uno y ver los usuarios aun no estan tan desarrolladas porque todavia no conocemos como lo implementaremos exactamente.
-
-- Dark Mode: Como funcionalidad adicional de javascript, añadimos en la parte superior derecha de la Navbar, un boton "DM" que sirve para activar el dark mode de la pagina, cambiando el color de fondo y de letra de la pagina. Para ello, se añadio un archivo .js que contiene la funcion que cambia los colores de la pagina (va cambiando entre negro y blanco).
