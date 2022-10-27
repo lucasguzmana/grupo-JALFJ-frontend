@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 
-export const SERVER_URL = "http://localhost:8080"
+export const SERVER_URL = process.env.REACT_APP_MY_SERVER_URL;
 
 export default class CrearModelo extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export default class CrearModelo extends Component {
         const parametro3 = document.getElementById("param_3").value;
         const parametro4 = document.getElementById("param_4").value;
         const parametro5 = document.getElementById("param_5").value;
-        const url = `${SERVER_URL}/api/auth/crear-modelo`;
+        const url = `${SERVER_URL}/crear-modelo`;
         console.log(nombre)
         console.log(parametro1)
         console.log(parametro2)

@@ -1,10 +1,25 @@
 import BotonVolver from "./BotonVolver";
 import ShowModel from "./ShowModel";
+import { useParams } from "react-router";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-export const SERVER_URL = "http://localhost:8080";
+
+export const SERVER_URL = process.env.REACT_APP_MY_SERVER_URL
 
 function VerModelo () {
-  const modelo = "";
+  const params = useParams();
+  const modelo_id = params.modelo_id;
+
+  const [modelo, setModelo] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get(`${SERVER_URL}/ver-modelo/${modelo_id}`);
+      setModelo(result.data);
+    }
+    fetchData();
+  }, [modelo_id]);
+
   return (
     <>
       <br/>

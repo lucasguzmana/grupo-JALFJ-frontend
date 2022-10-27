@@ -3,15 +3,13 @@ import React, { Component } from "react";
 import { useState, useEffect } from 'react';
 import Boton1 from './Boton1';
 
-export const SERVER_URL = "http://localhost:8080";
-const url = `${SERVER_URL}/api/auth/elegir-modelo`;
-
+export const SERVER_URL = process.env.REACT_APP_MY_SERVER_URL;
 
 function ElegirModelo(props) {
     const [modelos, setModelos] = useState([]);
     useEffect(() => {
         async function fetchData() {
-                const result = await axios.get(url);
+                const result = await axios.get(`${SERVER_URL}/elegir-modelo`);
                 setModelos(result.data);
         }
         fetchData();
