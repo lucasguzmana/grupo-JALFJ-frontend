@@ -49,10 +49,8 @@ export default class Admin extends Component {
     }
     return (
       <div className="container">
-        <header className="jumbotron">
           <h3>{this.state.content}</h3>
           <ElegirUsuario user={"user"}/>
-        </header>
       </div>
     );
   }

@@ -28,38 +28,41 @@ export default class Profile extends Component {
     const { currentUser } = this.state;
 
     return (
-      <div className="card">
-        {(this.state.userReady) ?
-        <div>
-        <header className="jumbotron">
-          <h3>
-            <strong>{currentUser.username}</strong> Profile
-          </h3>
-        </header>
-        <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
-        <p>
-          <strong>Id:</strong>{" "}
-          {currentUser.id}
-        </p>
-        <p>
-          <strong>Email:</strong>{" "}
-          {currentUser.email}
-        </p>
-        <p>
-          <strong>Telefono:</strong>{" "}
-          {currentUser.telefono}
-        </p>
-        <strong>Authorities:</strong>
-        <ul>
-          {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li className="li_esp" key={index}>{role}</li>)}
-        </ul>
-      </div>: null}
-      </div>
+<>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<section className="flex-container" id="cuerpo_4">
+        <table className="table">
+          <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Roles</th>
+          </tr>
+          <tr>
+            <td>{currentUser.id}</td>
+            <td>{currentUser.username}</td>
+            <td>{currentUser.email}</td>
+            <td>{currentUser.telefono}</td>
+            <td>
+              <ul>
+              {currentUser.roles &&
+              currentUser.roles.map((role, index) => <li className="li_esp" key={index}>{role}</li>)}
+              </ul>
+            </td>
+          </tr>
+        </table>
+</section>
+</>
     );
   }
 }
+
+
+
+
+
