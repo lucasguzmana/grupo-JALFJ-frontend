@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
 import { Navigate } from "react-router-dom";
+import ElegirUsuario from "./ElegirUsuario";
 
 export default class Admin extends Component {
   constructor(props) {
@@ -42,8 +43,6 @@ export default class Admin extends Component {
 
 
   // falta mostrar hacer la opcion para mostrar usuarios y eliminarlos. Las consultas estan ya hechas, falta conectarlas aca...
-
-  
   render() {
     if (this.state.redirect) {
       return <Navigate to={this.state.redirect} />
@@ -52,6 +51,7 @@ export default class Admin extends Component {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
+          <ElegirUsuario user={"user"}/>
         </header>
       </div>
     );
