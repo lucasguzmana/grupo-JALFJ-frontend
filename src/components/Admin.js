@@ -40,6 +40,10 @@ export default class Admin extends Component {
     );
   }
 
+
+  // falta mostrar hacer la opcion para mostrar usuarios y eliminarlos. Las consultas estan ya hechas, falta conectarlas aca...
+
+  
   render() {
     if (this.state.redirect) {
       return <Navigate to={this.state.redirect} />

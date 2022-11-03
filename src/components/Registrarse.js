@@ -54,12 +54,14 @@ export default class Register extends Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangeTelefono = this.onChangeTelefono.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangePassword2 = this.onChangePassword2.bind(this);
 
     this.state = {
       username: "",
       email: "",
       telefono: "",
       password: "",
+      password2: "",
       successful: false,
       message: ""
     };
@@ -90,6 +92,12 @@ export default class Register extends Component {
     });
   }
 
+  onChangePassword2(e) {
+    this.setState({
+      password2: e.target.value
+    });
+  }
+
   handleRegister(e) {
     e.preventDefault();
 
@@ -105,7 +113,8 @@ export default class Register extends Component {
         this.state.username,
         this.state.email,
         this.state.telefono,
-        this.state.password
+        this.state.password,
+        this.state.password2
       ).then(
         response => {
           this.setState({
@@ -190,6 +199,18 @@ export default class Register extends Component {
                     value={this.state.password}
                     onChange={this.onChangePassword}
                     validations={[required, vpassword]}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="password2">Confirm Password: </label>
+                  <Input
+                    type="password"
+                    className="form-control"
+                    name="password2"
+                    value={this.state.password2}
+                    onChange={this.onChangePassword2}
+                    validations={[required]}
                   />
                 </div>
 
