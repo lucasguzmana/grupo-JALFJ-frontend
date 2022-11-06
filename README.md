@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# grupo-JALFJ-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Reglas de negocio de Somking Monkeys:
 
-## Available Scripts
 
-In the project directory, you can run:
+Cuando uno ingresa a la App se le presentan 3 opciones de ingreso, una como administrador, otra como usuario y otra como invitado. Además, durante toda la navegación habrá un NavBar que permitirá navegar entre las distintas secciones de la App. En ella se pueden ver 4 opciones: Home, About, About Us y Contact. La primera opción lo llevara al landing page, la segunda a una sección donde se habla de la App, la tercera a una sección donde se habla de los desarrolladores y la última a una sección donde se puede contactar con los desarrolladores. Adicionalmente, en el NavBar tambien hay 2 botones, uno de cerrar sesión y otro de darkmode, sin embargo para esta entrega solo llevarán al landing page. Por ultimo, en toda pagina habrá un boton para volver atras.
 
-### `npm start`
+Cuando uno ingresa como administrador entra directo a la interfaz de administrador, donde se puede elegir entre todos los modelos y verlo en detalle, donde se pueden ver los parametros, los resultados o eliminarlo mediante los botones que hay en las siguentes secciones. Además, se puede acceder a una lista de los usuarios registrados, donde se puede ver su nombre, password, email y telefono. En ella se pueden eliminar los usuarios mediante un boton (con excepcion del administrador).Por ultimo se puede crear un modelo, llenando los campos que se piden al clickear crear modelo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Cuando uno ingresa como usuario lo rediccionara a una interfaz de inicio de sesión/registro, sin embargo esta es solo visual y no está implementada, por lo que existe un boton llamado "interfaz user" que lo llevara directo a la interfaz de usuario. En ella se pueden ver los modelos creados por el usuario que ingreso (como aún no esta implementado el log in por defecto se ingresa como el usuario de id = 1, pero uno puede cambiar esto desde la URL del navegador si es que ha añadido nuevos usuarios manuelmente a la base de datos). Al abrir la lista de modelos uno puede ver el detalle, los resultados o eliminarlos si desea. Por otra parte, se puede crear un modelo, llenando los campos que se piden al clickear crear modelo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cuando uno ingresa como invitado entra directo a la interfaz de invitado, donde podrá ver los modelos creados por los usuarios y sus resultados, pero no podrá eliminarlos.
 
-### `npm test`
+Como correr la app:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Echar a andar el servidor (instrucciones en el README del repositorio del backend)
+- Clonar el repositorio
+- Instalar las dependencias con npm install
+- Correr el servidor con npm start
+- Abrir el navegador en localhost:3000
