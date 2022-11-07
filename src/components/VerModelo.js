@@ -29,7 +29,7 @@ function VerModelo () {
     if (user === "admin") {
         window.location.href = "/admin";
     } else if (user === "user") {
-        window.location.href = `/usuario/${id}`;
+        window.location.href = `/user/${id}`;
     }
   }
 
