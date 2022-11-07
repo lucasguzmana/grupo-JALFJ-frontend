@@ -46,13 +46,13 @@ function VerModelo () {
               <table className="table">
                 <tr>
                   <th>Id</th>
-                  <th>User_id</th>
+                  <th>Id usuario</th>
                   <th>Nombre</th>
-                  <th>Param_1</th>
-                  <th>Param_2</th>
-                  <th>Param_3</th>
-                  <th>Param_4</th>
-                  <th>Param_5</th>
+                  <th>Cantidad empleados</th>
+                  <th>Sueldo empleados</th>
+                  <th>Producción mensual</th>
+                  <th>Costo de producción</th>
+                  <th>Precio venta</th>
                   <th>Resultados</th>
                   <th>Eliminar</th>
                 </tr>
