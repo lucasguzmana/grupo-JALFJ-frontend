@@ -10,7 +10,7 @@ function LoginForm (props) {
             <br/>
             <br/>
             <section className="flex-container" id="cuerpo_4">
-                <form>
+                <form onSubmit={props.function}>
                     <h2>Ingresar</h2>
                     <img src={"../images/logo.png"} className="logo" alt="logo" />
                     <div className="form-group">
@@ -30,7 +30,10 @@ function LoginForm (props) {
                 <br/>
                 <div className="flex-container" id="login_flex_2">
                     <Boton1 link={props.link} title={"Registrarse"}/>
-                    <Boton1 link={"/user/1"} title={"Interfaz User"}/>
+                </div>
+                <br/>
+                <div className="flex-container" id="login_flex_2">
+                    <Boton1 link={"/guest"} title={"Ingresa como invitado"}/>
                 </div>
                 <BotonVolver link={"/"}/>
             </section>
