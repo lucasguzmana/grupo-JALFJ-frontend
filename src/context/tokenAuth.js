@@ -9,6 +9,7 @@ const TokenAuthProvider = ({ children }) => {
 
     const handleTokenChange = (token, action) => {
         if (action === "login") {
+            console.log("estoy en el handleTokenChange");
             storeModels(token);
         }
         else {

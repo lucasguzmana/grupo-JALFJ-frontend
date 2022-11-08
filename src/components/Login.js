@@ -22,14 +22,20 @@ function Login() {
       "email": email,
       "password": password
     });
-    console.log(response.data.error);
+    console.log(response.data);
+
     if (!response.data.error) {
+      console.log(response.data.token);
       handleUserLogin();
-      handleTokenChange(response.data['token'], 'login');
-      navigate(-1);
+      handleTokenChange(response.data.token, 'login');
+      if (response.data.id === 0) {
+        navigate("/admin");
+      } else {
+        navigate(`/user/${response.data.id}`);
+      }
     } else {
       alert("Los datos ingresados son incorrectos");
-      console.log(response.data.error);
+      console.log("los datos ingresados son incorrectos");
     }
   };
 
