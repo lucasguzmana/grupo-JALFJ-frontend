@@ -15,8 +15,8 @@ function AboutUs () {
                     </div>
                     <div class="presentacion">
                         <h2 class="nombre">Felipe Karachon</h2>
-                        <p>Major</p>
-                        <p>Minor</p>
+                        <p>Ingeniero de Software</p>
+                        <p>Minor Industrial</p>
                         <p>Generación 2019</p>
                     </div>
                 </div>

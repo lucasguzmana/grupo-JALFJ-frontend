@@ -5,10 +5,12 @@ import BotonVolver from "./BotonVolver";
 import Navbar from "./Navbar";
 import ShowModel from "./ShowModel";
 import BotonEliminar from "./BotonEliminar";
+import useTokenAuth from "../hooks/useTokenAuth";
 
 export const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function VerModelo () {
+  const { handleTokenChange } = useTokenAuth();
   const params = useParams();
   const user = params.user;
   const id = params.id;
@@ -24,13 +26,15 @@ function VerModelo () {
   }, [modelo_id]);
 
   const DeleteModel = async (id) => {
-    await axios.post(`${SERVER_URL}/modelos/delete/${modelo_id}`);
+    const response = await axios.post(`${SERVER_URL}/modelos/delete/${modelo_id}`);
     alert (`Modelo ${modelo_id} eliminado`);
     if (user === "admin") {
         window.location.href = "/admin";
     } else if (user === "user") {
-        window.location.href = `/usuario/${id}`;
+        window.location.href = `/user/${id}`;
     }
+    alert(response.data.token);
+    handleTokenChange(response.data.token, "login");
   }
 
 
@@ -46,20 +50,20 @@ function VerModelo () {
               <table className="table">
                 <tr>
                   <th>Id</th>
-                  <th>User_id</th>
+                  <th>Id usuario</th>
                   <th>Nombre</th>
-                  <th>Param_1</th>
-                  <th>Param_2</th>
-                  <th>Param_3</th>
-                  <th>Param_4</th>
-                  <th>Param_5</th>
+                  <th>Cantidad empleados</th>
+                  <th>Sueldo empleados</th>
+                  <th>Producción mensual</th>
+                  <th>Costo de producción</th>
+                  <th>Precio venta</th>
                   <th>Resultados</th>
                   <th>Eliminar</th>
                 </tr>
                 <tr>
                   <ShowModel model={modelo} model_id={modelo.id} user={user}/>
                   <td><BotonEliminar id={"btn_res"} link={`/resultados_modelo/${user}/${id}/${modelo_id}`} title={"Ver"}/></td>
-                  <td>{user !== "guest" ? <BotonEliminar id={"btn_eliminar"} alApretar={DeleteModel} title={"X"} user_id={modelo_id}/> : ""}</td>
+                  <td>{user !== "guest" ? <BotonEliminar id={"btn_eliminar"} alApretar={DeleteModel} title={"X"} user_id={id}/> : ""}</td>
                 </tr>
               </table>
       </section>
