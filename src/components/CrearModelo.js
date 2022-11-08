@@ -44,15 +44,15 @@ function CrearModelo(props) {
             <div id='CrearModelo'>
                 <label>Nombre:</label>
                 <input type="text" id="nombre" name="nombre" />
-                <label>Parametro 1:</label>
+                <label>Cantidad empleados:</label>
                 <input type="number" id="param_1" name="param_1" />
-                <label>Parametro 2:</label>
+                <label>Sueldo empleados ($):</label>
                 <input type="number" id="param_2" name="param_2" />
-                <label>Parametro 3:</label>
+                <label>Producción mensual (Kg):</label>
                 <input type="number" id="param_3" name="param_3" />
-                <label>Parametro 4:</label>
+                <label>Costo de producción ($/Kg):</label>
                 <input type="number" id="param_4" name="param_4" />
-                <label>Parametro 5:</label>
+                <label>Precio venta ($/Kg):</label>
                 <input type="number" id="param_5" name="param_5" />
                 <button onClick={NuevoModelo}>Crear</button>
             </div>
