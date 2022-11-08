@@ -22,8 +22,7 @@ function Login() {
       "email": email,
       "password": password
     });
-    console.log(response.data);
-
+    
     if (!response.data.error) {
       console.log(response.data.token);
       handleUserLogin();
