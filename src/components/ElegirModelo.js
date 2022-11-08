@@ -27,8 +27,6 @@ function ElegirModelo(props) {
 
     const [ option, setOption ] = useState();
 
-    console.log(option);
-
     return (
         <div className="card_3">
             <label for="standard-select">Elige un modelo:</label>

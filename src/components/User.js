@@ -26,8 +26,6 @@ function User () {
             <Boton1 link={"/crear_modelo/" + id} title={"Crear Modelos"} id={"btn_2"}/>
             <img src={"../images/admin.jpg"} id={"img_admin"} alt={"admin"}/>
         </section>
-
-        <BotonVolver link={"/"}/>
     </>
   )
 }

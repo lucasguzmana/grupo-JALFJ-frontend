@@ -1,4 +1,23 @@
+import axios from "axios";
+import useCookieAuth from "../hooks/useCookieAuth";
+import useTokenAuth from "../hooks/useTokenAuth";
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 function Navbar() {
+    const { currentUser, handleUserLogout } = useCookieAuth();
+    const { handleTokenChange } = useTokenAuth();
+
+    const logout = async () => {
+        await axios.get(`${SERVER_URL}/auth/logout`)
+                .then(() => console.log("Logout successful"))
+                .catch((error) => console.log(error));
+        handleUserLogout();
+        handleTokenChange('', 'logout');
+    };
+
+
+
   return (
     <header className="header">
         <img class="logo" src={"../images/logo.png"} alt={"logo"}/>
@@ -17,8 +36,14 @@ function Navbar() {
                 </li>
             </ul>
         </nav>
-        <a href="/" class="cta"><button>Cerrar Sesion</button></a>
-        <a href="/" class="dark_mode"><button class="dark_mode_btn" onclick="cambiar_fondo()">DM</button></a>
+        {
+            (currentUser) ? (
+                <a href="/" class="cta"><button onClick={logout}>Cerrar Sesion</button></a>
+            ) : (
+                <></>
+            )
+        }
+        <a href="/" class="dark_mode"><button class="dark_mode_btn" onClick="cambiar_fondo()">DM</button></a>
     </header>
   );
 }

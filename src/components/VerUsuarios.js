@@ -12,7 +12,7 @@ function VerUsuarios () {
     const [usuarios, setUsuarios] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const result = await axios.get(`${SERVER_URL}/usuarios`);
+            const result = await axios.get(`${SERVER_URL}/usuarios/showall`);
             setUsuarios(result.data);
         }
         fetchData();
@@ -21,7 +21,7 @@ function VerUsuarios () {
     const eliminarUsuario = async (id) => {
         await axios.post(`${SERVER_URL}/usuarios/delete_models_and_results/${id}`);
         await axios.post(`${SERVER_URL}/usuarios/delete/${id}`);
-        const result = await axios.get(`${SERVER_URL}/usuarios`);
+        const result = await axios.get(`${SERVER_URL}/usuarios/showall`);
         setUsuarios(result.data);
     }
 
@@ -38,7 +38,6 @@ function VerUsuarios () {
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Password</th>
                         <th>Email</th>
                         <th>Telefono</th>
                         <th>Eliminar</th>
