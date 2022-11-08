@@ -5,10 +5,12 @@ import BotonVolver from "./BotonVolver";
 import Navbar from "./Navbar";
 import ShowModel from "./ShowModel";
 import BotonEliminar from "./BotonEliminar";
+import useTokenAuth from "../hooks/useTokenAuth";
 
 export const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function VerModelo () {
+  const { handleTokenChange } = useTokenAuth();
   const params = useParams();
   const user = params.user;
   const id = params.id;
@@ -24,13 +26,15 @@ function VerModelo () {
   }, [modelo_id]);
 
   const DeleteModel = async (id) => {
-    await axios.post(`${SERVER_URL}/modelos/delete/${modelo_id}`);
+    const response = await axios.post(`${SERVER_URL}/modelos/delete/${modelo_id}`);
     alert (`Modelo ${modelo_id} eliminado`);
     if (user === "admin") {
         window.location.href = "/admin";
     } else if (user === "user") {
         window.location.href = `/user/${id}`;
     }
+    alert(response.data.token);
+    handleTokenChange(response.data.token, "login");
   }
 
 
@@ -59,7 +63,7 @@ function VerModelo () {
                 <tr>
                   <ShowModel model={modelo} model_id={modelo.id} user={user}/>
                   <td><BotonEliminar id={"btn_res"} link={`/resultados_modelo/${user}/${id}/${modelo_id}`} title={"Ver"}/></td>
-                  <td>{user !== "guest" ? <BotonEliminar id={"btn_eliminar"} alApretar={DeleteModel} title={"X"} user_id={modelo_id}/> : ""}</td>
+                  <td>{user !== "guest" ? <BotonEliminar id={"btn_eliminar"} alApretar={DeleteModel} title={"X"} user_id={id}/> : ""}</td>
                 </tr>
               </table>
       </section>
