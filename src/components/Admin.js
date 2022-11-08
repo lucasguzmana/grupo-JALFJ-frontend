@@ -6,6 +6,9 @@ import Boton1 from "./Boton1";
 import ElegirModelo from "./ElegirModelo";
 
 function Admin() {
+    
+    
+    
     return (
       <>
         <Navbar/>
@@ -25,8 +28,6 @@ function Admin() {
             <Boton1 link={"/crear_modelo/0"} title={"Crear Modelos"} id={"btn_2"}/>
             <img src={"../images/admin.jpg"} id={"img_admin"} alt={"admin"}/>
         </section>
-
-        <BotonVolver link={"/"}/>
       </>
     );
   }
