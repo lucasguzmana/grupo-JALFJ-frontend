@@ -36,25 +36,25 @@ function Registrarse() {
         e.preventDefault();
         let ok = await formValidation(e)
         if (ok) {
-            const response = await axios.post(`${SERVER_URL}/auth/signup`, {
-                "nombre": nombre,
-                "email": email,
-                "password": password,
-                "telefono": telefono
-            });
-            console.log(response.data);
-            if (!response.data.error) {
-                navigate("/login");
-            } else {
-                alert("Los datos ingresados son incorrectos");
-                console.log("los datos ingresados son incorrectos");
-                navigate("/registrarse");
-            }
-        } else {
-            console.log("los datos ingresados son incorrectos");
-            navigate("/registrarse");
+            try {
+                const response = await axios.post(`${SERVER_URL}/auth/signup`, {
+                    "nombre": nombre,
+                    "email": email,
+                    "password": password,
+                    "telefono": telefono
+                });
+                console.log(response.data);
+                if (!response.data.error) {
+                    navigate("/login");
+                }
+            } catch (error) {
+                if (error.response.status === 409) {
+                    alert("El email y/o el nombre ya está en uso");
+                } else {
+                    alert("Error al registrarse");
+                }
+            }   
         }
-
     };
 
     return (

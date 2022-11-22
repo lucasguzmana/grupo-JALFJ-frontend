@@ -6,7 +6,7 @@ function Index() {
     return (
         <>
             <Navbar/>
-            <section class="flex-container" id="cuerpo">
+            <section className="flex-container" id="cuerpo">
                 <Tarjeta boton={<Boton1 title={"Inicia Sesión"} id={"btn_1"} link={"/login"}/>}/>
             </section>
         </>

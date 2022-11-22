@@ -19,11 +19,16 @@ function VerModelo () {
   const [modelo, setModelo] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const result = await axios.get(`${SERVER_URL}/modelos/user/${modelo_id}`);
-      setModelo(result.data);
+      if (user === "guest") {
+        const result = await axios.get(`${SERVER_URL}/guest/user/${modelo_id}`);
+        setModelo(result.data);
+      } else {
+        const result = await axios.get(`${SERVER_URL}/modelos/user/${modelo_id}`);
+        setModelo(result.data);
+      }
     }
     fetchData();
-  }, [modelo_id]);
+  }, [modelo_id, user]);
 
   const DeleteModel = async (id) => {
     const response = await axios.post(`${SERVER_URL}/modelos/delete/${modelo_id}`);
@@ -33,7 +38,6 @@ function VerModelo () {
     } else if (user === "user") {
         window.location.href = `/user/${id}`;
     }
-    alert(response.data.token);
     handleTokenChange(response.data.token, "login");
   }
 
