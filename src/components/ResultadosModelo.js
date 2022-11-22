@@ -15,11 +15,16 @@ function ResultadosModelo() {
   const [resultados, setResultados] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const result = await axios.get(`${SERVER_URL}/resultados/modelo/${modelo_id}`);
-      setResultados(result.data);
+      if (user === "guest") {
+        const result = await axios.get(`${SERVER_URL}/guest/modelo/${modelo_id}`);
+        setResultados(result.data);
+      } else {
+        const result = await axios.get(`${SERVER_URL}/resultados/modelo/${modelo_id}`);
+        setResultados(result.data);
+      }
     }
     fetchData();
-  }, [modelo_id]);
+  }, [modelo_id, user]);
 
   return (
     <>

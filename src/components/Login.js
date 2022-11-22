@@ -18,23 +18,27 @@ function Login() {
 
   const userValidation = async (e) => {
     e.preventDefault();
-    const response = await axios.post(`${SERVER_URL}/auth/login`, {
-      "email": email,
-      "password": password
-    });
-    
-    if (!response.data.error) {
-      console.log(response.data.token);
-      handleUserLogin();
-      handleTokenChange(response.data.token, 'login');
-      if (response.data.id === 0) {
-        navigate("/admin");
-      } else {
-        navigate(`/user/${response.data.id}`);
+    try {
+      const response = await axios.post(`${SERVER_URL}/auth/login`, {
+        "email": email,
+        "password": password
+      });
+
+      console.log(response.status);
+      
+      if (response.status === 201) {
+        console.log(response.status);
+        handleUserLogin();
+        handleTokenChange(response.data.token, 'login');
+        if (response.data.id === 0) {
+          navigate("/admin");
+        } else {
+          navigate(`/user/${response.data.id}`);
+        }
       }
-    } else {
+    } catch (error) {
       alert("Los datos ingresados son incorrectos");
-      console.log("los datos ingresados son incorrectos");
+      navigate("/login");
     }
   };
 

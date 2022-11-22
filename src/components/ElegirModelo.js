@@ -11,8 +11,13 @@ function ElegirModelo(props) {
     useEffect(() => {
         async function fetchData() {
             if (props.user === "admin" || props.user === "guest") {
+                if (props.user === "guest") {
+                    const result = await axios.get(`${SERVER_URL}/guest`);
+                    setModelos(result.data);
+                } else {
                 const result = await axios.get(`${SERVER_URL}/modelos`);
                 setModelos(result.data);
+                }
             } else {
                 const result = await axios.get(`${SERVER_URL}/modelos/${id}`);
                 setModelos(result.data);
@@ -29,8 +34,8 @@ function ElegirModelo(props) {
 
     return (
         <div className="card_3">
-            <label for="standard-select">Elige un modelo:</label>
-           <div class="select">
+            <label htmlFor="standard-select">Elige un modelo:</label>
+           <div className="select">
                 <select id="standard-select" onChange={handleSelectChange} placeholder={"Selecciona un modelo..."}>
                     <option value="" disabled selected>Selecciona un modelo...</option>
                     {modelos.map((modelo) => (
@@ -38,7 +43,7 @@ function ElegirModelo(props) {
                     ))}
                 </select>
             </div>
-            <Boton1 link={`/ver_modelo/${props.user}/${id}/${option}`} title={"Ver Más"} id={"btn_1"} type={"submit"}/>
+            { option === undefined ? <Boton1 disabled={true} link={`/ver_modelo/${props.user}/${id}/${option}`} title={"Ver Más"} id={"btn_1"} type={"submit"}/> : <Boton1 disabled={false} link={`/ver_modelo/${props.user}/${id}/${option}`} title={"Ver Más"} id={"btn_1"} type={"submit"}/> }
         </div>
     );
 }
